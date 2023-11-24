@@ -1,4 +1,5 @@
 const Payment = require('../../../../models/Payment');
+const getBookedByObjectId = require('../../../../lib/bookedApartment/getBookedByObjectId');
 
 const addNewPayment = async (req, res) => {
   try {

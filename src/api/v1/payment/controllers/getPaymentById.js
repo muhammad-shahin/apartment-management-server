@@ -2,14 +2,10 @@ const Payment = require('../../../../models/Payment');
 
 const getPaymentById = async (req, res) => {
   try {
-    // const userObjectId = req.params.userObjectId;
-    // const filter = { user: userObjectId };
-    const paymentHistory = await Payment.find().populate({
-      path: 'apartmentInfo',
-      populate: [
-        { path: 'user' }, // Populate the 'user' field inside 'apartmentInfo'
-        { path: 'apartment' }, // Populate the 'apartment' field inside 'apartmentInfo'
-      ],
+    const userObjectId = req.params.userObjectId;
+
+    const paymentHistory = await Payment.find({
+      'apartmentInfo.user._id': userObjectId,
     });
     console.log('Payment History Data By User Object Id:', paymentHistory);
     res.status(200).send(paymentHistory);

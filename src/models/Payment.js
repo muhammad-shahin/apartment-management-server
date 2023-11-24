@@ -3,8 +3,7 @@ const { model, Schema, Types } = require('mongoose');
 const PaymentSchema = new Schema(
   {
     apartmentInfo: {
-      type: Schema.Types.ObjectId,
-      ref: 'BookedApartment',
+      type: Object,
       required: true,
     },
     paymentOfMonth: {
