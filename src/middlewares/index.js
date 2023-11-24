@@ -5,8 +5,9 @@ const { LOCAL_CLIENT, CLIENT } = require('../config/defaults');
 const applyMiddleware = (app) => {
   app.use(
     cors({
-      origin: [LOCAL_CLIENT, CLIENT],
+      origin: 'http://localhost:5000',
       credentials: true,
+      methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     })
   );
   app.use(express.json());
