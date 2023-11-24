@@ -1,3 +1,8 @@
 const getAllBookedApartments = require('./getAllBookedApartments');
 const addBookedApartments = require('./addBookedApartments');
-module.exports = { getAllBookedApartments, addBookedApartments };
+const updateBookedApartment = require('./updateBookedApartment');
+module.exports = {
+  getAllBookedApartments,
+  addBookedApartments,
+  updateBookedApartment,
+};

@@ -6,6 +6,15 @@ const BookedApartmentSchema = new Schema({
     ref: 'User',
     required: true,
   },
+  bookingDate: {
+    type: String,
+    required: true,
+    default: new Date().toLocaleDateString('en-US', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }),
+  },
   bookingStatus: {
     type: String,
     required: true,
