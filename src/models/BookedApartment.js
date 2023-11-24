@@ -15,6 +15,11 @@ const BookedApartmentSchema = new Schema({
       year: 'numeric',
     }),
   },
+  acceptedDate: {
+    type: String,
+    required: true,
+    default: null,
+  },
   bookingStatus: {
     type: String,
     required: true,
