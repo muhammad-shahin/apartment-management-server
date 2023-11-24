@@ -1,2 +1,3 @@
 const addUser = require('./addUser');
-module.exports = addUser;
+const getAllUser = require('./getAllUser');
+module.exports = { addUser, getAllUser };
