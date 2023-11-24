@@ -1,2 +1,4 @@
 const addNewCoupon = require('./addNewCoupon');
-module.exports = { addNewCoupon };
+const getAllCoupon = require('./getAllCoupon');
+const getCouponByCode = require('./getCouponByCode');
+module.exports = { addNewCoupon, getAllCoupon, getCouponByCode };
