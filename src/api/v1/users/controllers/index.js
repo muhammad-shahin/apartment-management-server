@@ -1,3 +1,4 @@
 const addUser = require('./addUser');
 const getAllUser = require('./getAllUser');
-module.exports = { addUser, getAllUser };
+const updateUser = require('./updateUser');
+module.exports = { addUser, getAllUser, updateUser };
