@@ -1,4 +1,4 @@
-const addUser = require('../../../api/v1/users');
+const addUser = require('../../api/v1/users');
 
 const router = require('express').Router();
 

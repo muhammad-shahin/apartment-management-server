@@ -1,4 +1,4 @@
-const { createUser, logout } = require('../../../api/v1/authentication');
+const { createUser, logout } = require('../../api/v1/authentication');
 
 const router = require('express').Router();
 
