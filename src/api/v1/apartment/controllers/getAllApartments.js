@@ -1,8 +1,12 @@
 const Apartment = require('../../../../models/Apartment');
 const getAllApartments = async (req, res) => {
   try {
-    const allApartment = await Apartment.find();
-    console.log('All Apartments Data : ', allApartment);
+    const page = req.query.page;
+    const pageNumber = parseInt(page);
+    const itemPerPage = 6;
+    const skip = pageNumber * itemPerPage;
+    const allApartment = await Apartment.find().skip(skip).limit(itemPerPage);
+    console.log('All Apartments Data Retrieve Successfully ');
     res.status(200).send(allApartment);
   } catch (err) {
     console.log('Failed To Get All Apartments : ', err);

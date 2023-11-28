@@ -1,6 +1,6 @@
-const createUser = require('./createUser');
+const createToken = require('./createToken');
 const logout = require('./logout');
 module.exports = {
-  createUser,
   logout,
+  createToken,
 };

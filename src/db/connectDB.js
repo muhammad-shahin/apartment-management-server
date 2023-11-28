@@ -24,6 +24,7 @@ const getConnectionString = () => {
       '<password>',
       process.env.DATABASE_PRODUCTION_PASSWORD
     );
+    console.log('connected in production mode : ', connectionUrl);
   }
   return connectionUrl;
 };
