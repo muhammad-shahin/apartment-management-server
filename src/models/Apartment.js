@@ -6,11 +6,19 @@ const ApartmentSchema = new Schema(
       type: Array,
       required: true,
     },
-    floorNo: {
+    location: {
+      type: String,
+      required: false,
+    },
+    apartmentName: {
+      type: String,
+      required: false,
+    },
+    blockName: {
       type: String,
       required: true,
     },
-    blockName: {
+    floorNo: {
       type: String,
       required: true,
     },
@@ -32,14 +40,6 @@ const ApartmentSchema = new Schema(
     },
     totalBathroom: {
       type: Number,
-      required: false,
-    },
-    location: {
-      type: String,
-      required: false,
-    },
-    apartmentName: {
-      type: String,
       required: false,
     },
     details: {

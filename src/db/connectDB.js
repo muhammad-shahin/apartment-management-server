@@ -14,8 +14,16 @@ const getConnectionString = () => {
       '<password>',
       process.env.DATABASE_LOCAL_PASSWORD
     );
-  } else {
+  } else if (process.env.NODE_ENV === 'production') {
     connectionUrl = process.env.DATABASE_PROD;
+    connectionUrl = connectionUrl.replace(
+      '<username>',
+      process.env.DATABASE_PRODUCTION_USERNAME
+    );
+    connectionUrl = connectionUrl.replace(
+      '<password>',
+      process.env.DATABASE_PRODUCTION_PASSWORD
+    );
   }
   return connectionUrl;
 };
