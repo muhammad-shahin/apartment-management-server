@@ -12,12 +12,12 @@ const createPaymentIntent = async (req, res) => {
     });
 
     // Save payment details to MongoDB using Mongoose
-    const payment = new PaymentIntent({
-      price: price,
-      clientSecret: paymentIntent.client_secret,
-    });
+    // const payment = new PaymentIntent({
+    //   price: price,
+    //   clientSecret: paymentIntent.client_secret,
+    // });
 
-    await payment.save();
+    // await payment.save();
     console.log('client payment intent success = ', paymentIntent.client_secret);
     res.status(201).send({
       clientSecret: paymentIntent.client_secret,
