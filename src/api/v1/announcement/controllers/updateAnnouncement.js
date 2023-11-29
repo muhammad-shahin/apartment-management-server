@@ -5,17 +5,15 @@ const updateAnnouncement = async (req, res) => {
     const updatedAnnouncement = req.body;
     const { announcementTitle, announcementDescription } = updatedAnnouncement;
 
-    const result = await Announcement.updateOne(
+    const announcement = await Announcement.updateOne(
       { announcementTitle },
       { $set: { announcementDescription } },
       { upsert: true }
     );
 
-    console.log('Update Result:', result);
+    console.log('Update announcement:', announcement);
 
-    res
-      .status(200)
-      .send({ success: true, message: 'Announcement updated successfully' });
+    res.status(201).send({ success: true, data: announcement });
   } catch (err) {
     console.log('Failed to update announcement:', err);
     res

@@ -6,6 +6,7 @@ const bookedApartmentRoutes = require('./bookedApartment');
 const couponRoutes = require('./coupon');
 const paymentRoutes = require('./payment');
 const announcementRoutes = require('./announcement');
+const paymentIntentRoutes = require('./paymentIntent');
 
 const router = express.Router();
 
@@ -16,5 +17,6 @@ router.use(bookedApartmentRoutes);
 router.use(couponRoutes);
 router.use(paymentRoutes);
 router.use(announcementRoutes);
+router.use(paymentIntentRoutes);
 
 module.exports = router;

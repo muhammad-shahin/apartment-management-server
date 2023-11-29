@@ -9,7 +9,7 @@ const addUser = async (req, res) => {
     const exist = await User.findOne({ userId: userId });
     if (exist) {
       console.log('user exist', exist);
-      return res.send({ success: true, message: 'User already exist' });
+      return res.send({ success: true, registeredUser: exist });
     }
 
     // Create a new User document
@@ -19,7 +19,7 @@ const addUser = async (req, res) => {
     const savedUser = await newUser.save();
     console.log('Saved User: ', savedUser);
 
-    res.status(201).json(savedUser);
+    res.status(201).json({ success: true, registeredUser: savedUser });
   } catch (error) {
     console.error('Error Adding user:', error);
     res.status(500).send('Internal Server Error');

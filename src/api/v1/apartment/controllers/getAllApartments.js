@@ -5,9 +5,11 @@ const getAllApartments = async (req, res) => {
     const pageNumber = parseInt(page);
     const itemPerPage = 6;
     const skip = pageNumber * itemPerPage;
+    const totalApartmentsCount = await Apartment.estimatedDocumentCount();
+    console.log('total Apartments Count :', totalApartmentsCount);
     const allApartment = await Apartment.find().skip(skip).limit(itemPerPage);
     console.log('All Apartments Data Retrieve Successfully ');
-    res.status(200).send(allApartment);
+    res.status(200).send({ allApartment, totalApartmentsCount });
   } catch (err) {
     console.log('Failed To Get All Apartments : ', err);
     res

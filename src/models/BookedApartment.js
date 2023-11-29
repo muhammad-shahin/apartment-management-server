@@ -7,6 +7,11 @@ const BookedApartmentSchema = new Schema(
       ref: 'User',
       required: true,
     },
+    apartment: {
+      type: Schema.Types.ObjectId,
+      ref: 'Apartment',
+      required: true,
+    },
     bookingDate: {
       type: String,
       required: true,
@@ -18,18 +23,13 @@ const BookedApartmentSchema = new Schema(
     },
     acceptedDate: {
       type: String,
-      required: false,
-      default: null,
+      required: true,
+      default: 'Pending',
     },
     bookingStatus: {
       type: String,
       required: true,
       default: 'Pending',
-    },
-    apartment: {
-      type: Schema.Types.ObjectId,
-      ref: 'Apartment',
-      required: true,
     },
   },
   {

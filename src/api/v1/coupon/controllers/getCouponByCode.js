@@ -14,12 +14,12 @@ const getCouponByCode = async (req, res) => {
     const currentDate = new Date();
     if (couponExpiryDate < currentDate) {
       return res
-        .status(401)
+        .status(200)
         .send({ success: false, message: 'Coupon Expired' });
     }
 
     console.log('Coupons Data by Code:', coupon);
-    res.status(200).send(coupon);
+    res.status(200).send({ success: true, coupon });
   } catch (err) {
     console.log('Failed To Get Coupons Code by Code:', err);
     res.status(500).send({
