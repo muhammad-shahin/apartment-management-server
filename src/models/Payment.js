@@ -17,7 +17,7 @@ const PaymentSchema = new Schema(
       type: Object,
       required: true,
     },
-    userInfo: {
+    user: {
       type: Object,
       required: true,
     },
