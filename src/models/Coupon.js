@@ -10,9 +10,18 @@ const CouponSchema = new Schema(
       type: String,
       required: true,
     },
+    couponDescription: {
+      type: String,
+      required: false,
+    },
     discount: {
       type: Number,
       required: true,
+    },
+    createdBy: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: false,
     },
   },
   {

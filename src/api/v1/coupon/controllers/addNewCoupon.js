@@ -4,8 +4,7 @@ const addNewCoupon = async (req, res) => {
     const couponData = req.body;
     const newCoupon = new Coupon(couponData);
     const savedCoupon = await newCoupon.save();
-    console.log('Saved New Coupon : ', savedCoupon);
-    res.status(201).send(savedCoupon);
+    res.status(201).send({ success: true, savedCoupon });
   } catch (err) {
     console.log('Failed To Saved New Coupon : ', err);
     res.status(500).send({

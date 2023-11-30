@@ -2,9 +2,7 @@ const Coupon = require('../../../../models/Coupon');
 
 const getAllCoupon = async (req, res) => {
   try {
-    const allCoupons = await Coupon.find();
-
-    console.log('All Coupons Data:', allCoupons);
+    const allCoupons = await Coupon.find().populate('createdBy');
 
     res.status(200).send(allCoupons);
   } catch (err) {
