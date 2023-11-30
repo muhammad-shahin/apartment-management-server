@@ -4,7 +4,9 @@ const User = require('../../../../models/User');
 const updateBookedApartment = async (req, res) => {
   try {
     const { bookedApartmentId } = req.body;
-    const existingBooking = await BookedApartment.findById(bookedApartmentId).populate('user');
+    const existingBooking = await BookedApartment.findById(
+      bookedApartmentId
+    ).populate('user');
 
     if (!existingBooking) {
       return res
@@ -34,7 +36,7 @@ const updateBookedApartment = async (req, res) => {
 
     res
       .status(200)
-      .send({ success: true, bookedApartment: updatedBookingStatus });
+      .send({ success: true, insertedId: updatedBookingStatus._id });
   } catch (error) {
     console.error('Error updating booked apartment:', error);
     res

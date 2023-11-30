@@ -13,9 +13,6 @@ const getAllBookedApartments = async (req, res) => {
       totalApartments: apartmentCount,
     };
 
-    // Log the data for debugging purposes
-    console.log('All Booked Apartments Data:', response);
-
     res.status(200).send(response);
   } catch (err) {
     console.log('Failed To Get All Booked Apartments:', err);

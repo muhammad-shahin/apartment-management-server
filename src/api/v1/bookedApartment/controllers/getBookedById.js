@@ -7,7 +7,6 @@ const getBookedById = async (req, res) => {
     const Apartments = await BookedApartment.find(filter)
       .populate('user')
       .populate('apartment');
-    console.log(' Booked Apartments Data By User Object Id:', Apartments);
     res.status(200).send(Apartments);
   } catch (err) {
     console.log('Failed To Get Booked Apartments By User Object Id:', err);
