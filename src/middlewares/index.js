@@ -5,7 +5,10 @@ const { LOCAL_CLIENT, CLIENT } = require('../config/defaults');
 const applyMiddleware = (app) => {
   app.use(
     cors({
-      origin: 'http://localhost:5173',
+      origin: [
+        'http://localhost:5173',
+        'https://linden-apartment-management.web.app',
+      ],
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     })

@@ -25,12 +25,12 @@ const AnnouncementSchema = new Schema(
     announcementDate: {
       type: String,
       default: formattedDate,
-      required: true,
+      required: false,
     },
     announcementTime: {
       type: String,
       default: formattedTime,
-      required: true,
+      required: false,
     },
   },
   {

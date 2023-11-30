@@ -1,4 +1,10 @@
 const { model, Schema } = require('mongoose');
+const currentDate = new Date();
+const formattedDate = currentDate.toLocaleDateString('en-US', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+});
 
 const UserSchema = new Schema(
   {
@@ -17,6 +23,11 @@ const UserSchema = new Schema(
     userRole: {
       type: String,
       required: true,
+    },
+    userCreated: {
+      type: String,
+      required: false,
+      default: formattedDate,
     },
   },
   {

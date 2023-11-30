@@ -4,9 +4,7 @@ const getPaymentById = async (req, res) => {
   try {
     const userObjectId = req.params.userObjectId;
 
-    const paymentHistory = await Payment.find({
-      'apartmentInfo.user._id': userObjectId,
-    });
+    const paymentHistory = await Payment.find({ 'user._id': userObjectId });
     console.log('Payment History Data By User Object Id:', paymentHistory);
     res.status(200).send(paymentHistory);
   } catch (err) {
