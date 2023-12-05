@@ -48,7 +48,7 @@ const ApartmentSchema = new Schema(
     },
     bookingStatus: {
       type: String,
-      required: true,
+      required: false,
       default: 'Available',
     },
   },

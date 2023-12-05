@@ -6,7 +6,7 @@ const {
 const verifyToken = require('../../middlewares/verifyToken');
 const router = require('express').Router();
 
-router.post('/users', verifyToken, addUser);
+router.post('/users', addUser);
 router.get('/users', getAllUser);
 router.put('/users', verifyToken, updateUser);
 

@@ -3,8 +3,11 @@ const User = require('../../../../models/User');
 const getAllUser = async (req, res) => {
   try {
     const userId = req.query.uid;
+    console.log('user uid outside  : ', userId);
     if (userId) {
+      console.log('user uid inside : ', userId);
       const registeredUser = await User.findOne({ userId });
+      console.log('registeredUser lenghth : ', registeredUser);
       if (registeredUser) {
         return res.send({ success: true, registeredUser });
       }
